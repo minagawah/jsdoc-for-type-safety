@@ -1,0 +1,8 @@
+node_modules
+.eslintrc.js
+.eslintignore
+.prettierignore
+.prettierrc.js
+package-lock.json
+*.log
+*.lock

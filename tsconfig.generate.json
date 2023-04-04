@@ -1,0 +1,65 @@
+{
+  "compilerOptions": {
+    // https://aka.ms/tsconfig.json
+
+    // -------------------------------------
+    // Basic Options
+    // -------------------------------------
+
+    // Specify ECMAScript target version
+    // 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017',
+    // 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'.
+    "target": "es6",
+
+    // Specify module code generation.
+    // 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015',
+    // 'es2020', or 'ESNext'.
+    "module": "umd",
+
+    // Specify library files to be included in the compilation.
+    // "lib": ["es6", "dom"],
+
+    "allowJs": true, // Allow javascript files to be compiled.
+    "checkJs": true, // Report errors in .js files.
+    "declaration": true, // Generates corresponding '.d.ts' file.
+    "outDir": "types", // Redirect output structure to the directory.
+    "removeComments": false, // Do not emit comments to output.
+    // "noEmit": true, // Do not emit outputs.
+
+    // -------------------------------------
+    // Strict Type-Checking Options
+    // -------------------------------------
+
+    // Enable strict null checks.
+    "strictNullChecks": false,
+
+    // Parse in strict mode and emit "use strict" for each source file.
+    "alwaysStrict": true,
+
+    // -------------------------------------
+    // Module Resolution Options
+    // -------------------------------------
+
+    // Specify module resolution strategy.
+    // 'node' (Node.js) or 'classic' (TypeScript pre-1.6).
+    "moduleResolution": "node",
+
+    // Check if a file is a module.
+    // auto:
+    //    TS will not only look for import and export, but it will also
+    //    check whether 'type' field in package.json is set to "module".
+    // legacy:
+    //    Usings import and export statements to determine whether
+    //    a file is a module.
+    // force:
+    //    Ensures that every non-declaration file is treated as a module.
+    "moduleDetection": "force",
+
+    /* Experimental Options */
+
+    // Enables experimental support for emitting type metadata for decorators.
+    "emitDeclarationOnly": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["__tests__", "node_modules", "types"]
+}

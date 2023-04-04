@@ -1,0 +1,53 @@
+{
+  "name": "jsdoc-for-type-safety",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Using JSDoc for static types, running a type check with TypeScript",
+  "main": "dist/index.html",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "jsdoc": "jsdoc -c .jsdoc.conf.js -d jsdoc/ src/",
+    "lint:check": "eslint \"src/**/*.js\"",
+    "lint:fix": "eslint --fix \"src/**/*.js\"",
+    "prettier": "prettier --write \"*.{js,md,json}\" \"src/*.js\"",
+    "lint:both": "$npm_execpath run lint:fix && $npm_execpath run prettier",
+    "type:check": "tsc -p tsconfig.json",
+    "type:generate": "rimraf types && tsc -p tsconfig.generate.json",
+    "build:dev": "webpack",
+    "build": "webpack --optimization-minimize",
+    "serve": "http-server dist -a localhost -p 8080",
+    "start": "$npm_execpath run build:dev && $npm_execpath run serve"
+  },
+  "repository": "https://github.com/minagawah/jsdoc-for-type-safety.git",
+  "keywords": [
+    "JSDoc",
+    "type safety",
+    "TypeScript"
+  ],
+  "author": "minagawah <minag@tokyo800.jp>",
+  "license": "(Unlicense OR MIT)",
+  "bugs": {
+    "url": "https://github.com/minagawah/jsdoc-for-type-safety/issues"
+  },
+  "dependencies": {
+    "core-js": "^3.29.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@ckeditor/jsdoc-plugins": "^36.0.1",
+    "babel-loader": "^9.1.2",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "http-server": "^14.1.1",
+    "jsdoc": "^4.0.2",
+    "jsdoc-tsimport-plugin": "^1.0.5",
+    "prettier": "^2.8.7",
+    "rimraf": "^4.4.1",
+    "typescript": "^5.0.3",
+    "webpack": "^5.77.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
